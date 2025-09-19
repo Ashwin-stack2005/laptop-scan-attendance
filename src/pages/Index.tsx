@@ -48,24 +48,26 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-gradient-to-r from-primary via-primary to-accent shadow-lg">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 text-primary-foreground">
-              <GraduationCap className="w-8 h-8" />
+            <div className="flex items-center gap-4 text-primary-foreground">
+              <div className="bg-white/20 p-3 rounded-2xl">
+                <GraduationCap className="w-10 h-10" />
+              </div>
               <div>
-                <h1 className="text-2xl font-bold">Attendance System</h1>
-                <p className="text-primary-foreground/80 text-sm">Smart ID Card Scanner</p>
+                <h1 className="text-3xl font-bold">Welcome to Class! 👋</h1>
+                <p className="text-primary-foreground/90 text-lg">Let's mark your attendance together</p>
               </div>
             </div>
             
-            <div className="flex items-center gap-4 text-primary-foreground/90">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span className="text-sm">{currentDate}</span>
+            <div className="flex items-center gap-6 text-primary-foreground/90">
+              <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full">
+                <Calendar className="w-5 h-5" />
+                <span className="text-sm font-medium">{currentDate}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
-                <span className="text-sm">CS Year 3</span>
+              <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full">
+                <Users className="w-5 h-5" />
+                <span className="text-sm font-medium">CS Year 3</span>
               </div>
             </div>
           </div>
@@ -84,20 +86,22 @@ const Index = () => {
             />
 
             {/* Quick Stats */}
-            <Card className="p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Quick Stats</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-success">
+            <Card className="p-6 bg-gradient-to-br from-card to-secondary/30 border-0 shadow-warm">
+              <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+                📊 Today's Progress
+              </h3>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-4 bg-gradient-to-br from-success/10 to-success/5 rounded-xl">
+                  <div className="text-3xl font-bold text-success mb-1">
                     {students.filter(s => s.isPresent).length}
                   </div>
-                  <div className="text-sm text-muted-foreground">Present Today</div>
+                  <div className="text-sm font-medium text-success/80">Students Here! 🎉</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">
+                <div className="text-center p-4 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl">
+                  <div className="text-3xl font-bold text-primary mb-1">
                     {students.length}
                   </div>
-                  <div className="text-sm text-muted-foreground">Total Students</div>
+                  <div className="text-sm font-medium text-primary/80">Total Class 👥</div>
                 </div>
               </div>
             </Card>
